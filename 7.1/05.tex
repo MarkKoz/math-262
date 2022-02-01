@@ -1,0 +1,96 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.1}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[5.]
+    Let $A = \begin{bmatrix}2 & 0 \\ 3 & 4\end{bmatrix}$. Show that 2 and 4 are eigenvalues of $A$ and find all corresponding eigenvectors. Find an eigenbasis of $A$ and thus diagonalize $A$. \\
+    \\
+    First, show 2 and 4 are eigenvalues of $A$ by showing det$(A - \lambda I_2) = 0$ where $\lambda$ is the eigenvalue being tested.
+    \begin{equation*}
+      \begin{aligned}[c]
+        0 &= \text{det}(A - 2I_2) \\
+        &= \text{det}\left(
+          \begin{bmatrix}
+            2 & 0 \\
+            3 & 4
+          \end{bmatrix}
+          - \begin{bmatrix}
+            2 & 0 \\
+            0 & 2
+          \end{bmatrix}
+        \right) \\
+        &= \text{det}\begin{bmatrix}
+          0 & 0 \\
+          3 & 2
+        \end{bmatrix} \\
+        &= (0 \cdot 2) - (0 \cdot 3) \\
+        &= 0
+      \end{aligned}
+      \qquad
+      \begin{aligned}[c]
+        0 &= \text{det}(A - 4I_2) \\
+        &= \text{det}\left(
+          \begin{bmatrix}
+            2 & 0 \\
+            3 & 4
+          \end{bmatrix}
+          - \begin{bmatrix}
+            4 & 0 \\
+            0 & 4
+          \end{bmatrix}
+        \right) \\
+        &= \text{det}\begin{bmatrix}
+          -2 & 0 \\
+          3 & 0
+        \end{bmatrix} \\
+        &= (-2 \cdot 0) - (0 \cdot 3) \\
+        &= 0
+      \end{aligned}
+    \end{equation*} \\
+    To find all eigenvectors of $A$, find the kernel of $A - \lambda I_2$ for each eigenvalue.
+    \begin{equation*}
+      \begin{aligned}[c]
+        \text{ker}(A - 2I_2) &= \text{ker}\begin{bmatrix}
+          0 & 0 \\
+          3 & 2
+        \end{bmatrix} \\
+        &= \text{span}\Set{
+          \begin{bmatrix}
+            -\frac{2}{3} \\ 1
+          \end{bmatrix}
+        }
+      \end{aligned}
+      \qquad
+      \begin{aligned}[c]
+        \text{ker}(A - 4I_2) &= \text{ker}\begin{bmatrix}
+          -2 & 0 \\
+          3 & 0
+        \end{bmatrix} \\
+        &= \text{span}\Set{
+          \begin{bmatrix}
+            0 \\ 1
+          \end{bmatrix}
+        }
+      \end{aligned}
+    \end{equation*} \\
+    The vectors $\begin{bmatrix}-\frac{2}{3} \\ 1\end{bmatrix}$, $\begin{bmatrix}0 \\ 1\end{bmatrix}$ form an eigenbasis for $A$, so that $A$ is diagonalizable, with $S = \begin{bmatrix}-\frac{2}{3} & 0 \\ 1 & 1\end{bmatrix}$ and $B = \begin{bmatrix}2 & 0 \\ 0 & 4\end{bmatrix}$.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{amsthm}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.2a}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[7.]
+    \begin{claim}
+      The following function is a linear transformation.
+      \begin{align*}
+        T(f(t)) = t(f^\prime(t)) \ \text{from} \ P_2 \ \text{to} \ P_2
+      \end{align*}
+    \end{claim}
+    \begin{proof}
+      Take some $f(t),g(t) \in P_2$ and $k \in \mathbb{R}$. Show that $T(f(t)) + kT(g(t)) = T(f(t) + kg(t))$.
+      \begin{align*}
+        T(f(t)) + kT(g(t)) &= t \cdot f^\prime(t) + t \cdot kg^\prime(t) \\
+        &= t(f^\prime(t) + kg^\prime(t)) \\
+        &= t(\frac{d}{dt}f(t) + \frac{d}{dt}kg(t)) \\
+        &= t \cdot \frac{d}{dt}(f(t) + kg(t)) \\
+        &= T(f(t) + kg(t))
+      \end{align*}
+      $T(f(t))$ has been shown to follow the sum rule and constant-multiple rule. Therefore, it is a linear transformation.
+    \end{proof}
+\end{enumerate}
+
+\end{document}

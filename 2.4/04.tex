@@ -1,0 +1,17 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+
+For $A$ to be invertible, its columns must be linearly independent. To check this, consider the following equation
+\begin{align*}
+  A\vec{x} &= \vec{0} \\
+  \vec{v}_{1}x_{1} + \vec{v}_{2}x_{2} + \ldots + \vec{v}_{n}x_{n} &= \vec{0}
+\end{align*}
+Let $i = 1$ and $j = 2$ so that the first two columns of $A$ are equal. Then, the equation becomes
+\begin{align*}
+  \vec{v}_{1}(x_{1} + x_{2}) + \ldots + \vec{v}_{n}x_{n} = \vec{0}
+\end{align*}
+Notice that to get $\vec{0}$ as a solution, any constant such that $x_{1} = -x_{2}$ will cancel out the first term. Then, the rest of $\vec{x}$ can be zeros. Since there is an infinite number of solutions rather than only the trivial $\vec{x} = \vec{0}$, the columns of $A$ are linearly dependent. Therefore, $A$ is not invertible.
+\end{document}

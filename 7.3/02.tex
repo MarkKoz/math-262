@@ -1,0 +1,84 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{blkarray, bigstrut}
+\usepackage{xcolor}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.3}
+\date{} % clear date
+
+\definecolor{bookblue}{RGB}{0, 121, 193}
+
+\newcommand{\mat}[1]{
+  \begin{bmatrix}
+    #1
+  \end{bmatrix}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[2.]
+    Let $A = \mat{1 & 1 & 0 \\ 0 & 2 & 2 \\ 0 & 0 & 3}$. \\
+    \\
+    Find all (real) eigenvalues for $A$. Then find a basis of each eigenspace, and diagonalize $A$, if you can. Do not use technology. \\
+    \\
+    Since $A$ is a triangular matrix, its eigenvalues are its diagonal entries:
+    \begin{align*}
+      \lambda_1 &= 1 \ \text{with a multiplicity of} \ 1 \\
+      \lambda_2 &= 2 \ \text{with a multiplicity of} \ 1 \\
+      \lambda_3 &= 3 \ \text{with a multiplicity of} \ 1
+    \end{align*}
+    Now, use these eigenvalues to find the basis of each eigenspace. \\
+    \begin{align*}
+      E_1 &= \text{ker}(A - I_2)
+      = \text{ker} \begin{blockarray}{ccc}
+        \color{bookblue}{1} & \color{bookblue}{0} & \color{bookblue}{0} \\
+        \begin{block}{[ccc]}
+          0 & 1 & 0 \bigstrut[t] \\
+          0 & 1 & 2 \\
+          0 & 0 & 2 \bigstrut[b] \\
+        \end{block}
+      \end{blockarray}
+      = \text{span}\Set{\mat{1 \\ 0 \\ 0}}
+    \end{align*}
+    \begin{align*}
+      E_2 &= \text{ker}(A - 2I_2)
+      = \text{ker} \begin{blockarray}{ccc}
+        \color{bookblue}{1} & \color{bookblue}{1} & \color{bookblue}{0} \\
+        \begin{block}{[ccc]}
+          -1 & 1 & 0 \bigstrut[t] \\
+          0 & 0 & 2 \\
+          0 & 0 & 1 \bigstrut[b] \\
+        \end{block}
+      \end{blockarray}
+      = \text{span}\Set{\mat{1 \\ 1 \\ 0}}
+    \end{align*}
+    \begin{align*}
+      E_3 &= \text{ker}(A - 3I_2)
+      = \text{ker} \begin{blockarray}{ccc}
+        \color{bookblue}{1} & \color{bookblue}{2} & \color{bookblue}{1} \\
+        \begin{block}{[ccc]}
+          -2 & 1 & 0 \bigstrut[t] \\
+          0 & -1 & 2 \\
+          0 & 0 & 0 \bigstrut[b] \\
+        \end{block}
+      \end{blockarray}
+      = \text{span}\Set{\mat{1 \\ 2 \\ 1}}
+    \end{align*}
+    The vectors $\mat{1 \\ 0 \\ 0}, \mat{1 \\ 1 \\ 0}, \mat{1 \\ 2 \\ 1}$ form an eigenbasis for $A$, so that $A$ is diagonalizable. $A = SBS^{-1}$ with $S = \mat{1 & 1 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 1}$ and $B = \mat{1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3}$.
+
+\end{enumerate}
+
+\end{document}

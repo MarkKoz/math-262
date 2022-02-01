@@ -1,0 +1,112 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.1}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[11.]
+    Find a basis for the linear space $V$ below and determine its dimension. \\
+    \\
+    The space of all $2 \times 2$ matrices $A$ that commute with
+    \begin{align*}
+      B = \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \textit{Note:} Matrices $A$ that commute with $B$ means $AB = BA$. \\
+    \begin{equation*}
+      \begin{aligned}[c]
+        AB &= \begin{bmatrix}
+          a_{11} & (a_{11} + a_{12}) \\
+          a_{21} & (a_{21} + a_{22})
+        \end{bmatrix}
+      \end{aligned}
+      \qquad
+      \begin{aligned}[c]
+        BA &= \begin{bmatrix}
+          (a_{11} + a_{21}) & (a_{12} + a_{22}) \\
+          a_{21} & a_{22}
+        \end{bmatrix}
+      \end{aligned}
+    \end{equation*} \\
+    Let $AB = BA$: \\
+    \begin{minipage}[t]{\dimexpr0.33\linewidth-.2pt}
+      \begin{align*}
+        a_{11} &= a_{11} + a_{21} \\
+        0 &= a_{21}
+      \end{align*}
+    \end{minipage}%
+    \begin{minipage}[t]{\dimexpr0.33\linewidth-.2pt}
+      \begin{align*}
+        a_{11} + a_{12} &= a_{12} + a_{22} \\
+        a_{11} &= a_{22}
+      \end{align*}
+    \end{minipage}
+    \begin{minipage}[t]{\dimexpr0.33\linewidth-.2pt}
+      \begin{align*}
+        a_{21} + a_{22} &= a_{22} \\
+        0 + a_{22} &= a_{22} \\
+        a_{22} &= a_{22}
+      \end{align*}
+    \end{minipage}
+    Thus, $A$ is of the form
+    \begin{align*}
+      A &= \begin{bmatrix}
+        r & s \\
+        0 & r
+      \end{bmatrix}
+    \end{align*}
+    This can be expanded to
+    \begin{align*}
+      A &= r\begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix} +
+      s\begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+      \end{bmatrix} \\
+      A &= \text{span}\left\{
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+    Finally,
+    \begin{align*}
+      \text{basis of V} &= \left\{
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix}
+      \right\} \\
+      \text{dim}(V) &= 2
+    \end{align*}
+
+\end{enumerate}
+
+\end{document}

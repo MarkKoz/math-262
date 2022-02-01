@@ -1,0 +1,396 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{braket}
+
+\usepackage{array}
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 3.3}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[2.]
+    The redundant column is $\vec{v}_1 = \vec{0}$. The nonredundant column
+    \begin{align*}
+      \vec{v}_2 = \begin{bmatrix}
+        1 \\ 2
+      \end{bmatrix}
+    \end{align*}
+    forms a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 1$.
+
+    Using the redundant vector $\vec{v}_1$, a vector in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_1 = \vec{0} &
+      \vec{v}_1 - 0\vec{v}_2 = \vec{0} &
+      \vec{w}_1 = \begin{bmatrix}
+        1 \\ 0
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vector $\vec{w}_1$ constructed above forms a basis of the kernel of $A$. This can be verified by observing that $\vec{w}_1$ is trivially linearly independent and that $\text{dim}(\text{ker} \ A) = 1$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 2
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 0
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[6.]
+    The redundant column is $\vec{v}_3 = \vec{v}_1 + 2\vec{v}_2$. The nonredundant columns
+    \begin{align*}
+      \vec{v}_1 = \begin{bmatrix}
+        1 \\ 2
+      \end{bmatrix},
+      \vec{v}_2 = \begin{bmatrix}
+        1 \\ 1
+      \end{bmatrix}
+    \end{align*}
+    form a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 2$.
+
+    Using the redundant vector $\vec{v}_3$, a vector in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_3 = \vec{v}_1 + 2\vec{v}_2 &
+      -\vec{v}_1 - 2\vec{v}_2 + \vec{v}_3 = \vec{0} &
+      \vec{w}_3 = \begin{bmatrix}
+        -1 \\ -2 \\ 1
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vector $\vec{w}_3$ constructed above forms a basis of the kernel of $A$. This can be verified by observing that $\vec{w}_3$ is trivially linearly independent and that $\text{dim}(\text{ker} \ A) = 1$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 2
+        \end{bmatrix},
+        \begin{bmatrix}
+          1 \\ 1
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          -1 \\ -2 \\ 1
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[8.]
+    The redundant column is $\vec{v}_1 = \vec{0}$. The nonredundant columns
+    \begin{align*}
+      \vec{v}_2 = \begin{bmatrix}
+        1 \\ 1 \\ 1
+      \end{bmatrix},
+      \vec{v}_3 = \begin{bmatrix}
+        1 \\ 2 \\ 3
+      \end{bmatrix}
+    \end{align*}
+    form a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 2$.
+
+    Using the redundant vector $\vec{v}_1$, a vector in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_1 = \vec{0} &
+      \vec{v}_1 - 0\vec{v}_2 - 0\vec{v}_3 = \vec{0} &
+      \vec{w}_1 = \begin{bmatrix}
+        1 \\ 0 \\ 0
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vector $\vec{w}_1$ constructed above forms a basis of the kernel of $A$. This can be verified by observing that $\vec{w}_1$ is trivially linearly independent and that $\text{dim}(\text{ker} \ A) = 1$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 1 \\ 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          1 \\ 2 \\ 3
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 0 \\ 0
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[12.]
+    The redundant columns are $\vec{v}_1 = \vec{0}$ and $\vec{v}_3 = 2\vec{v}_2$. The nonredundant column
+    \begin{align*}
+      \vec{v}_2 = \begin{bmatrix}
+        1
+      \end{bmatrix}
+    \end{align*}
+    forms a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 1$.
+
+    Using the redundant vector $\vec{v}_1$, two vectors in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_1 = \vec{0} &
+      \vec{v}_1 - 0\vec{v}_2 - 0\vec{v}_3 = \vec{0} &
+      \vec{w}_1 = \begin{bmatrix}
+        1 \\ 0 \\ 0
+      \end{bmatrix}
+      \\
+      \vec{v}_3 = 2\vec{v}_2 &
+      -0\vec{v}_1 - 2\vec{v}_2 + \vec{v}_3 = \vec{0} &
+      \vec{w}_3 = \begin{bmatrix}
+        0 \\ -2 \\ 1
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vectors $\vec{w}_1$ and $\vec{w}_3$ constructed above form a basis of the kernel of $A$. This can be verified by observing that they're linearly independent and that $\text{dim}(\text{ker} \ A) = 2$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ -2 \\ 1
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[16.]
+    The redundant columns are $\vec{v}_2 = -2\vec{v}_1$ and $\vec{v}_4 = -\vec{v}_1 + 5\vec{v}_3$. The nonredundant columns
+    \begin{align*}
+      \vec{v}_1 = \begin{bmatrix}
+        1 \\ 0 \\ 0
+      \end{bmatrix},
+      \vec{v}_3 = \begin{bmatrix}
+        0 \\ 1 \\ 0
+      \end{bmatrix},
+      \vec{v}_5 = \begin{bmatrix}
+        0 \\ 0 \\ 1
+      \end{bmatrix}
+    \end{align*}
+    form a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 3$.
+
+    Using the redundant vectors $\vec{v}_2$ and $\vec{v}_4$, two vectors in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_2 = -2\vec{v}_1 &
+      2\vec{v}_1 + \vec{v}_2 -0\vec{v}_3 - 0\vec{v}_4 - 0\vec{v}_5 = \vec{0} &
+      \vec{w}_2 = \begin{bmatrix}
+        2 \\ 1 \\ 0 \\ 0 \\ 0
+      \end{bmatrix}
+      \\
+      \vec{v}_4 = -\vec{v}_1 + 5\vec{v}_3 &
+      \vec{v}_1 - 0\vec{v}_2 - 5\vec{v}_3 + \vec{v}_4 - 0\vec{v}_5 = \vec{0} &
+      \vec{w}_4 = \begin{bmatrix}
+        1 \\ 0 \\ 0 \\ 1 \\ 0
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vectors $\vec{w}_2$ and $\vec{w}_4$ constructed above form a basis of the kernel of $A$. This can be verified by observing that they're linearly independent and that $\text{dim}(\text{ker} \ A) = 2$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 1 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 0 \\ 1
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          2 \\ 1 \\ 0 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          1 \\ 0 \\ 0 \\ 1 \\ 0
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[18.]
+    The redundant column is $\vec{v}_3 = 3\vec{v}_1 + 2\vec{v}_2$. The nonredundant columns
+    \begin{align*}
+      \vec{v}_1 = \begin{bmatrix}
+        1 \\ 0 \\ 0 \\ 0
+      \end{bmatrix},
+      \vec{v}_2 = \begin{bmatrix}
+        1 \\ 1 \\ 1 \\ 1
+      \end{bmatrix},
+      \vec{v}_4 = \begin{bmatrix}
+        1 \\ 2 \\ 3 \\ 4
+      \end{bmatrix}
+    \end{align*}
+    form a basis of the image of $A$. Thus $\text{dim}(\text{im} \ A) = 3$.
+
+    Using the redundant vector $\vec{v}_3$, a vector in the kernel of $A$ can be generated.
+    \begin{center}
+    \begin{tabular}{C C C}
+      \textit{Redundant Vector} & \textit{Relation} & \textit{Vector in Kernel of A} \\
+      \\
+      \vec{v}_3 = 3\vec{v}_1 + 2\vec{v}_2 &
+      -3\vec{v}_1 -2\vec{v}_2 + \vec{v}_3 - 0\vec{v}_4 = \vec{0} &
+      \vec{w}_3 = \begin{bmatrix}
+        -3 \\ -2 \\ 1 \\ 0
+      \end{bmatrix}
+    \end{tabular}
+    \end{center}
+    Vector $\vec{w}_3$ constructed above forms a basis of the kernel of $A$. This can be verified by observing that $\vec{w}_3$ is trivially linearly independent and that $\text{dim}(\text{ker} \ A) = 1$.
+
+    Finally,
+    \begin{align*}
+      \text{im}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 0 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          1 \\ 1 \\ 1 \\ 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          1 \\ 2 \\ 3 \\ 4
+        \end{bmatrix}
+      \right\} \\
+      \text{ker}(A) &= \text{span}\left\{
+        \begin{bmatrix}
+          -3 \\ -2 \\ 1 \\ 0
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+  \item[24.]
+    Solve the linear system $A\vec{x} = \vec{0}$ by Gaussian elimination.
+    \begin{align*}
+      B = \text{rref}(A) = \begin{bmatrix}
+        1 & 2 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    $A\vec{x} = \vec{0}$ can be solved by solving the simpler $B\vec{x} = \vec{0}$. The vectors in $\text{ker}(B)$ are of the form
+    \begin{align*}
+      \vec{x} = \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+      \end{bmatrix} = \begin{bmatrix}
+        -2q \\
+        q \\
+        & r \\
+        & & s \\
+        & & & t \\
+      \end{bmatrix} =
+      q\underbrace{\begin{bmatrix}
+        -2 \\ 1 \\ 0 \\ 0 \\ 0
+      \end{bmatrix}}_{\vec{w}_1} + r\underbrace{\begin{bmatrix}
+        0 \\ 0 \\ 1 \\ 0 \\ 0
+      \end{bmatrix}}_{\vec{w}_2} + s\underbrace{\begin{bmatrix}
+        0 \\ 0 \\ 0 \\ 1 \\ 0
+      \end{bmatrix}}_{\vec{w}_3} + t\underbrace{\begin{bmatrix}
+        0 \\ 0 \\ 0 \\ 0 \\ 1
+      \end{bmatrix}}_{\vec{w}_4}
+    \end{align*}
+    where $q$, $r$, $s$, and $t$ are arbitrary constants.
+
+    Note that $\text{ker}(A) = \text{ker}(B)$. The vectors $\vec{w}_1$, $\vec{w}_2$, $\vec{w}_3$, and $\vec{w}_4$ form a basis of the kernel of $A$. The preceding equation, $\vec{x} = q\vec{w}_1 + r\vec{w}_2 + s\vec{w}_3 + t\vec{w}_4$, shows that these four vectors span the kernel. Furthermore, these vectors are linearly independent. Thus, the basis of the kernel of $A$ is
+    \begin{align*}
+      \text{ker}(A) = \text{span}\left\{
+        \begin{bmatrix}
+          -2 \\ 1 \\ 0 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 0 \\ 1 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 0 \\ 0 \\ 1 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 0 \\ 0 \\ 0 \\ 1
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+    and $\text{dim}(\text{ker} \ A) = 4$.
+
+    To construct the basis of the image of $A$, find the redundant columns of $A$. Using $B = rref(A)$, the redundant columns are the ones that lack a leading 1. The only redundant column is $\vec{b}_2 = 2\vec{b}_1$. Therefore, $\vec{a}_2$ in matrix $A$ is also redundant via the same relation. Thus, a basis of the image of $A$ is
+    \begin{align*}
+      \text{im}(A) = \text{span}\left\{
+        \begin{bmatrix}
+          8 \\ 6 \\ 4 \\ 2
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+    and $\text{dim}(\text{im} \ A) = 1$.
+  \item[30.]
+    \begin{align*}
+      S &= \Set{
+        \begin{bmatrix}
+          x_1 \\ x_2 \\ x_3 \\ x_4
+        \end{bmatrix}
+        | 2x_1 - x_2 + 2x_3 + 4x_4 = 0
+      } \subseteq \mathbb{R}^4 \\
+      \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4
+      \end{bmatrix} &= \begin{bmatrix}
+        x_1 \\
+        2x_1 +& 2x_3 +& 4x_4 \\
+        & x_3 \\
+        & & x_4
+      \end{bmatrix} = x_1\begin{bmatrix}
+        1 \\ 2 \\ 0 \\ 0
+      \end{bmatrix} + x_3\begin{bmatrix}
+        0 \\ 2 \\ 1 \\ 0
+      \end{bmatrix} + x_4\begin{bmatrix}
+        0 \\ 4 \\ 0 \\ 1
+      \end{bmatrix}
+    \end{align*}
+    The basis for subspace $S$ is
+    \begin{align*}
+      S = \text{span}\left\{
+        \begin{bmatrix}
+          1 \\ 2 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 2 \\ 1 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 \\ 4 \\ 0 \\ 1
+        \end{bmatrix}
+      \right\}
+    \end{align*}
+
+\end{enumerate}
+
+\end{document}

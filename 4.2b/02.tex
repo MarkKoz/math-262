@@ -1,0 +1,149 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.2b}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[2.]
+    Find the kernel and image of the linear transformation and state whether it is an isomorphism. Remember a linear transformation is an isomorphism if and only if the kernel is trivial (equals the zero element only) and the image is everything.
+    \begin{align*}
+      T(M) = M
+      \begin{bmatrix}
+        1 & 2 \\
+        3 & 6
+      \end{bmatrix}
+      \text{from} \ \mathbb{R}^{2 \times 2} \ \text{to} \ \mathbb{R}^{2 \times 2}
+    \end{align*}
+    Let A =
+    $\begin{bmatrix}
+      1 & 2 \\
+      3 & 6
+    \end{bmatrix}$.
+    The kernel of $T(M)$ is defined as
+    \begin{align*}
+      ker(T) &= \Set{M \in \mathbb{R}^{2 \times 2} | T(M) = 0} \\
+      &= \Set{
+        M \in \mathbb{R}^{2 \times 2}
+        | M \cdot A = 0
+      }
+    \end{align*}
+    \begin{align*}
+      M \cdot A &= 0 \\
+      \begin{bmatrix}
+        m_{11} & m_{12} \\
+        m_{21} & m_{22}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 2 \\
+        3 & 6
+      \end{bmatrix} &= 0 \\
+      \begin{bmatrix}
+        m_{11} + 3m_{12} & 2m_{11} + 6m_{12} \\
+        m_{21} + 3m_{22} & 2m_{21} + 6m_{22}
+      \end{bmatrix} &= 0
+    \end{align*}
+    \begin{align*}
+      m_{11} + 3m_{12} = 0 &\longrightarrow m_{11} = -3m_{12} \\
+      m_{21} + 3m_{22} = 0 &\longrightarrow m_{21} =-3m_{22}
+    \end{align*}
+    \begin{align*}
+      \text{ker}(T) &= \Set{
+        \begin{bmatrix}
+          -3m_{12} & m_{12} \\
+          -3m_{22} & m_{22} \\
+        \end{bmatrix}
+        | m_{12}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        m_{12}\begin{bmatrix}
+          -3 & 1 \\
+          0 & 0
+        \end{bmatrix} +
+        m_{22}\begin{bmatrix}
+          0 & 0 \\
+          -3 & 1
+        \end{bmatrix}
+        | m_{12}, m_{22} \in \mathbb{R}
+      } \\
+      &= \text{span}\Set{
+        \begin{bmatrix}
+          -3 & 1 \\
+          0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\
+          -3 & 1
+        \end{bmatrix}
+      }
+    \end{align*}
+    Because $\text{nullity}(T) \ne 0$, $T(M)$ is not an isomorphism. Next, find the image anyway for the sake of exercise.
+    \begin{align*}
+      \text{im}(T) &= \Set{
+        M \cdot A
+        | M \in \mathbb{R}^{2 \times 2}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          m_{11} & m_{12} \\
+          m_{21} & m_{22}
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 2 \\
+          3 & 6
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{21}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          m_{11} + 3m_{12} & 2m_{11} + 6m_{12} \\
+          m_{21} + 3m_{22} & 2m_{21} + 6m_{22}
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{21}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          m_{11} + 3m_{12} & 2(m_{11} + 3m_{12}) \\
+          m_{21} + 3m_{22} & 2(m_{21} + 3m_{22})
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{21}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        (m_{11} + 3m_{12})\begin{bmatrix}
+          1 & 2 \\
+          0 & 0
+        \end{bmatrix} +
+        (m_{21} + 3m_{22})\begin{bmatrix}
+          0 & 0 \\
+          1 & 2
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{21}, m_{22} \in \mathbb{R}
+      } \\
+      &= \text{span}\Set{
+        \begin{bmatrix}
+          1 & 2 \\
+          0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\
+          1 & 2
+        \end{bmatrix}
+      }
+    \end{align*}
+\end{enumerate}
+
+\end{document}

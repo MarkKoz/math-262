@@ -1,0 +1,64 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{blkarray}
+\usepackage{xcolor}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.3}
+\date{} % clear date
+
+\definecolor{bookblue}{RGB}{0, 121, 193}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[1.]
+    Let $A = \begin{bmatrix}0 & -1 \\ 1 & 2\end{bmatrix}$. \\
+    \\
+    Find all (real) eigenvalues for $A$. Then find a basis of each eigenspace, and diagonalize $A$, if you can. Do not use technology. \\
+    \\
+    First, find the eigenvalues for $A$.
+    \begin{align*}
+      \text{tr}(A) = 0 + 2 = 2
+    \end{align*}
+    \begin{align*}
+      \text{det}(A) = (0 \cdot 2) - (-1 \cdot 1) = 0 - (-1) = 0 + 1 = 1
+    \end{align*}
+    \begin{align*}
+      0 &= det(A - \lambda I_2) \\
+      &= \lambda^2 - \text{tr}(A)\lambda + \text{det}(A) \\
+      &= \lambda^2 - 2\lambda + 1 \\
+      &= (\lambda - 1)^2
+    \end{align*}
+    $A$ has one eigenvalue $\lambda_1 = 1$ with a multiplicity of 2. Now, use this eigenvalue to find the eigenspace and its basis. \\
+    \begin{align*}
+      E_1 &= \text{ker}(A - I_2)
+      = \text{ker} \begin{blockarray}{cc}
+        \textcolor{bookblue}{-1} & \textcolor{bookblue}{1} \\
+        \begin{block}{[cc]}
+          -1 & -1 \\
+          1 & 1 \\
+        \end{block}
+      \end{blockarray}
+      = \text{span}\Set{
+        \begin{bmatrix}
+          -1 \\ 1
+        \end{bmatrix}
+      }
+    \end{align*}
+    Because only one linearly independent eigenvector can be found, it's not possible to construct an eigenbasis for $A$. Thus, $A$ fails to be diagonalizable.
+
+\end{enumerate}
+
+\end{document}

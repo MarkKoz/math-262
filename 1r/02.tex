@@ -1,0 +1,39 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+% MACROS %
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+% CUSTOM STYLES %
+\thispagestyle{empty} % remove page number
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\begin{claim}
+A system of four linear equations in three unknowns is always inconsistent.
+\end{claim}
+
+\begin{proof}
+Suppose the claim is true. A counterexample to that claim is the following system, which has a trivial solution of all unknowns being zero:
+\begin{align*}
+  & \begin{bmatrix}[ccc|c]
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix} &
+\end{align*}
+Therefore, the claim is false.
+\end{proof}
+
+\end{document}

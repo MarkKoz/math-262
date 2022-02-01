@@ -1,0 +1,27 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[x11names]{xcolor}
+
+\begin{document}
+
+If $A^{17} = I_2$, then it is false that $A$ must be $I_2$. As a counterexample, let $A$ be a rotation matrix on $\frac{2\pi}{17}$:
+\begin{align*}
+  A = \begin{bmatrix}
+    \cos(\frac{2\pi}{17}) & -\sin(\frac{2\pi}{17}) \\
+    \sin(\frac{2\pi}{17}) & \cos(\frac{2\pi}{17})
+  \end{bmatrix}
+\end{align*}
+A single rotation on $2\pi$ would give $I_2$:
+\begin{align*}
+  \begin{bmatrix}
+    \cos(2\pi) & -\sin(2\pi) \\
+    \sin(2\pi) & \cos(2\pi)
+  \end{bmatrix} = \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix} = I_2
+\end{align*}
+If the rotation angle $2\pi$ is divided by 17, then repeating the rotation 17 times would result in a rotation by $2\pi$. This is what is being done when the rotation matrix $A$ is put to the power of 17.
+
+\end{document}

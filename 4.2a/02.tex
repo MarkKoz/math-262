@@ -1,0 +1,69 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{amsthm}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.2a}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[2.]
+    \begin{claim}
+      The following function is a linear transformation.
+      \begin{align*}
+        T(M) = M + I_2 \ \text{from} \ \mathbb{R}^{2 \times 2} \ \text{to} \ \mathbb{R}^{2 \times 2}
+      \end{align*}
+    \end{claim}
+    \begin{proof}
+      Let
+      \begin{align*}
+        M_1 &= M_2 = \begin{bmatrix}
+          0 & 0 \\
+          0 & 0
+        \end{bmatrix} \\
+        k &= 1
+      \end{align*}
+      Assume the claim is true. Thus, $T(M_1) + kT(M_2) = T(M_1 + kM_2)$, $T(M)$ must hold true for any $M_1,M_2 \in \mathbb{R}^{2 \times 2}$ and $k \in \mathbb{R}$.
+      \begin{align*}
+        T(M_1) + kT(M_2) &=
+        \begin{bmatrix}
+          0 & 0 \\
+          0 & 0
+        \end{bmatrix} + I_2 +
+        1\left(\begin{bmatrix}
+          0 & 0 \\
+          0 & 0
+        \end{bmatrix} + I_2\right) \\
+        &= 2I_2 \\
+        \\
+        T(M_1 + kM_2) &=
+        \begin{bmatrix}
+          0 & 0 \\
+          0 & 0
+        \end{bmatrix} +
+        1\begin{bmatrix}
+          0 & 0 \\
+          0 & 0
+        \end{bmatrix} + I_2 \\
+        &= I_2
+      \end{align*}
+      $T(M_1) + kT(M_2) \ne T(M_1 + kM_2)$, which contradicts the definition of a linear transformation. Therefore, the claim is false.
+    \end{proof}
+\end{enumerate}
+
+\end{document}

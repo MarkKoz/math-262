@@ -1,0 +1,46 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+% MACROS %
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+% CUSTOM STYLES %
+\thispagestyle{empty} % remove page number
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{theorem21}{Theorem 21}
+
+\begin{document}
+
+\begin{theorem21}
+Consider a system of $m$ equations in $n$ unknowns. Let $\begin{bmatrix}[c|c]A & \vec{b}\end{bmatrix}$ be the augmented matrix associated to this system and let $\begin{bmatrix}[c|c]H & \vec{c}\end{bmatrix}$ be the reduced row-echelon form of $\begin{bmatrix}[c|c]A & \vec{b}\end{bmatrix}$. The matrices $A$ and $H$ are $m \times n$ matrices and
+\begin{enumerate}
+  \item $rank(A) \le n$ and $rank(A) \le m$
+  \item If $rank(A) = m$ then the system has at least one solution.
+  \item If $rank(A) = n$ then the system has at most one solution.
+  \item If $rank(A) < n$ then the system has either infinitely many or no solutions.
+\end{enumerate}
+\end{theorem21}
+
+\begin{claim}
+It is false that there exists a $5\times5$ matrix $A$ of rank $4$ such that the system $A\vec{x}=\vec{0}$ has only the solution $\vec{x}=\vec{0}$.
+\end{claim}
+
+\begin{proof}
+Let $n = 5$, the number of columns in the matrix $A$. Notice that for $A$
+\begin{align*}
+  rank(A) < n \\
+  4 < 5
+\end{align*}
+By Therem 21, the system has either infinitely many or no solutions. Therefore, the claim is true.
+\end{proof}
+
+\end{document}

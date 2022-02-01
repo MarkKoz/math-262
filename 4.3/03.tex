@@ -1,0 +1,178 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.3}
+\date{} % clear date
+
+\newcommand{\mat}[1]{
+  \begin{bmatrix}
+    #1
+  \end{bmatrix}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[3.]
+    Find the matrix of the given linear transformation $T$ with respect to the given basis. Determine whether $T$ is an isomorphism. If $T$ isn't an isomorphism, find bases of the kernel and image of $T$, and thus determine the rank of $T$.
+    \begin{align*}
+      T(M) = M\mat{1 & 2 \\ 0 & 1} - \mat{1 & 2 \\ 0 & 1}M \ \text{from} \ U^{2 \times 2} \ \text{to} \ U^{2 \times 2}
+    \end{align*}
+    For the space of $U^{2 \times 2}$ of upper traingular $2 \times 2$ matrices, use the basis
+    \begin{align*}
+      \beta = \left(
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\
+          0 & 1
+        \end{bmatrix}
+      \right)
+    \end{align*} \\
+    Let A = $\mat{1 & 2 \\ 0 & 1}$. The kernel of $T(M)$ is defined as
+    \begin{align*}
+      ker(T) &= \Set{M \in U^{2 \times 2} | T(M) = 0} \\
+      &= \Set{
+        M \in U^{2 \times 2}
+        | M \cdot A - A \cdot M = 0
+      } \\
+      &= \Set{
+        M \in U^{2 \times 2}
+        | M \cdot A = A \cdot M
+      }
+    \end{align*}
+    Notice the kernel is the set of all $M \in U^{2 \times 2}$ that commute with $A$.
+    \begin{align*}
+      M \cdot A &= A \cdot M \\
+      \begin{bmatrix}
+        m_{11} & m_{12} \\
+        0 & m_{22}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 2 \\
+        0 & 1
+      \end{bmatrix}
+      &=
+      \begin{bmatrix}
+        1 & 2 \\
+        0 & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        m_{11} & m_{12} \\
+        0 & m_{22}
+      \end{bmatrix} \\
+      \begin{bmatrix}
+        m_{11} & 2m_{11} + m_{12} \\
+        0 & m_{22}
+      \end{bmatrix}
+      &= \begin{bmatrix}
+        m_{11} & m_{12} + 2m_{22} \\
+        0 & m_{22}
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      2m_{11} + m_{12} = m_{12} + 2m_{22} &\longrightarrow m_{11} = m_{22}
+    \end{align*}
+    \begin{align*}
+      M = \begin{bmatrix}
+        r & s \\
+        0 & r
+      \end{bmatrix} =
+      r\begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix} +
+      s \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+      \end{bmatrix} \\
+      \text{ker}(T) = \text{span}\Set{
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix}
+      }
+    \end{align*}
+    Because $\text{nullity}(T) \ne 0$, $T(M)$ is not an isomorphism. Next, find the image.
+\begin{align*}
+      \text{im}(T) &= \Set{
+        M \cdot A - A \cdot M
+        | M \in U^{2 \times 2}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          m_{11} & m_{12} \\
+          0 & m_{22}
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 2 \\
+          0 & 1
+        \end{bmatrix}
+        - \begin{bmatrix}
+          1 & 2 \\
+          0 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+          m_{11} & m_{12} \\
+          0 & m_{22}
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          m_{11} & 2m_{11} + m_{12} \\
+          0 & m_{22}
+        \end{bmatrix} -
+        \begin{bmatrix}
+          m_{11} & m_{12} + 2m_{22} \\
+          0 & m_{22}
+        \end{bmatrix}
+        | m_{11}, m_{12}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        \begin{bmatrix}
+          0 & 2m_{11} - 2m_{22} \\
+          0 & 0
+        \end{bmatrix}
+        | m_{11}, m_{22} \in \mathbb{R}
+      } \\
+      &= \Set{
+        (2m_{11} - 2m_{22})\begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix}
+        | m_{11}, m_{22} \in \mathbb{R}
+      } \\
+      &= \text{span}\Set{
+        \begin{bmatrix}
+          0 & 1 \\
+          0 & 0
+        \end{bmatrix}
+      }
+    \end{align*}
+    Thus, the rank of $T$ is 1.
+\end{enumerate}
+
+\end{document}

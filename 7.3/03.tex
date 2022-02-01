@@ -1,0 +1,54 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{blkarray, bigstrut}
+\usepackage{xcolor}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.3}
+\date{} % clear date
+
+\definecolor{bookblue}{RGB}{0, 121, 193}
+
+\newcommand{\mat}[1]{
+  \begin{bmatrix}
+    #1
+  \end{bmatrix}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[3.]
+    Let $A = \mat{1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1}$. \\
+    \\
+    Find all (real) eigenvalues for $A$. Then find a basis of each eigenspace, and diagonalize $A$, if you can. Do not use technology. \\
+    \\
+    Since $A$ is a triangular matrix, its eigenvalues are its diagonal entries. It only has one eigenvalue $\lambda_1 = 1$ with a multiplicity of 3. Now, use this eigenvalue to find the basis of the eigenspace. \\
+    \begin{align*}
+      E_1 &= \text{ker}(A - I_2)
+      = \text{ker} \begin{blockarray}{ccc}
+        \color{bookblue}{1} & \color{bookblue}{0} & \color{bookblue}{0} \\
+        \begin{block}{[ccc]}
+          0 & 1 & 0 \bigstrut[t] \\
+          0 & 0 & 1 \\
+          0 & 0 & 0 \bigstrut[b] \\
+        \end{block}
+      \end{blockarray}
+      = \text{span}\Set{\mat{1 \\ 0 \\ 0}}
+    \end{align*}
+    Because only one linearly independent eigenvector can be found, it's not possible to construct an eigenbasis for $A$. Thus, $A$ fails to be diagonalizable.
+
+\end{enumerate}
+
+\end{document}

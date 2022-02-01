@@ -1,0 +1,58 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{amsthm}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.2a}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[1.]
+    \begin{claim}
+      The following function is a linear transformation.
+      \begin{align*}
+        T(M) = M\begin{bmatrix}
+          1 & 3 \\
+          3 & 9
+        \end{bmatrix}
+        \text{from} \ \mathbb{R}^{2 \times 2} \ \text{to} \ \mathbb{R}^{2 \times 2}
+      \end{align*}
+    \end{claim}
+    \begin{proof}
+      Take some $M_1,M_2 \in \mathbb{R}^{2 \times 2}$ and $k \in \mathbb{R}$.
+      \begin{align*}
+        T(M_1) + kT(M_2) &=
+        M_1\begin{bmatrix}
+          1 & 3 \\
+          3 & 9
+        \end{bmatrix} +
+        kM_2\begin{bmatrix}
+          1 & 3 \\
+          3 & 9
+        \end{bmatrix} \\
+        &= (M_1 + kM_2)\begin{bmatrix}
+          1 & 3 \\
+          3 & 9
+        \end{bmatrix} \\
+        &= T(M_1 + kM_2)
+      \end{align*}
+      Notice that the transformation matrix can be trivially factored out of the initial equation. By showing, $T(M_1) + kT(M_2) = T(M_1 + kM_2)$, $T(M)$ has been shown to follow the sum rule and constant-multiple rule. Therefore, it is a linear transformation.
+    \end{proof}
+\end{enumerate}
+
+\end{document}

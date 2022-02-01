@@ -1,0 +1,90 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage[x11names]{xcolor}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{braket}
+
+\usetikzlibrary{arrows.meta}
+\pgfplotsset{
+  compat = newest,
+  blank_style/.style={
+    clip=false,
+    axis equal,
+    axis line style={draw=none},
+    tick style={draw=none},
+    ticks=none,
+    line width=1pt,
+  },
+  blank_clamped_style/.style={
+    blank_style,
+    xmin=-0.5,
+    xmax=1,
+    ymin=-1,
+    ymax=1,
+  },
+}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.1}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[4.]
+    Arguing geometrically, find all eigenvectors and eigenvalues of the linear transformation:
+    \begin{center}
+      Reflection about a line $L$ in $\mathbb{R}^2$
+    \end{center}
+    Then find an eigenbasis if you can, and thus determine whether the given transformation is diagonalizable. \\ \\
+    Below on the left is a plot of a vector $\vec{u}$ that is on $L$ and a vector $\vec{v}$ that is on $L^\perp$, the line perpendicular to $L$. On the right is a plot of these vectors reflected about $L$. \\
+    \begin{tikzpicture}
+      \begin{axis}[blank_clamped_style]
+        \addplot[<->, black, domain=-0.5:1]{0} node[above,pos=1] {$L$};
+        \addplot[<->, black, domain=-1:1]({0},{x}) node[right,pos=1] {$L^\perp$};
+
+        \addplot[-Latex, Firebrick2, ultra thick] coordinates {
+          (0, 0)
+          (0.75, 0)
+        } node[above,pos=1] {$\vec{u}$};
+
+        \addplot[-Latex, DodgerBlue2, ultra thick] coordinates {
+          (0, 0)
+          (0, 0.75)
+        } node[right,pos=1] {$\vec{v}$};
+      \end{axis}
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}
+      \begin{axis}[blank_clamped_style]
+        \addplot[<->, black, domain=-0.5:1]{0} node[above,pos=1] {$L$};
+        \addplot[<->, black, domain=-1:1]({0},{x}) node[right,pos=1] {$L^\perp$};
+
+        \addplot[-Latex, Firebrick2, ultra thick] coordinates {
+          (0, 0)
+          (0.75, 0)
+        } node[above,pos=1] {$T(\vec{u})$};
+        \addplot[-Latex, DodgerBlue2, ultra thick] coordinates {
+          (0, 0)
+          (0, -0.75)
+        } node[right,pos=1] {$T(\vec{v})$};
+      \end{axis}
+    \end{tikzpicture} \\
+    Notice $T(\vec{u})$ remains the same, so it's eigenvalue is 1. $T(\vec{v})$ remains on $L^\perp$, but is going in the opposite direction, so it's eigenvalue is $-1$. Therefore, the transformation is diagonalizable and
+    \begin{align*}
+      \text{eigenbasis} = \Set{\vec{u}, \vec{v}} \text{where} \ \vec{u} \in L, \vec{v} \in L^\perp
+    \end{align*}
+\end{enumerate}
+
+\end{document}

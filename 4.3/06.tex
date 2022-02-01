@@ -1,0 +1,48 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{amsthm}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.3}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[6.]
+    \begin{claim}
+      Let $T: V \to W$ be a linear transformation of linear spaces $V$ and $W$, suppose that a set of vectors $\Set{\vec{v_1}, \vec{v_2}, \vec{v_3}} \subset V$ has the property that $\Set{T(\vec{v_1}), T(\vec{v_2}), T(\vec{v_3})} \subset W$ is linearly independent. Then, the set of vectors $\Set{\vec{v_1}, \vec{v_2}, \vec{v_3}}$ is linearly independent.
+    \end{claim}
+    \begin{proof}
+      Suppose that $a_1\vec{v_1} + a_2\vec{v_2} + a_3\vec{v_3} = \vec{0}$. \\
+      Then, applying $T$ to both sides we get
+      \begin{equation*}
+        T(a_1\vec{v_1} + a_2\vec{v_2} + a_3\vec{v_3}) = T(\vec{0})
+      \end{equation*}
+      Since $T$ is a linear transformation, we get
+      \begin{equation*}
+        a_1T(\vec{v_1}) + a_2T(\vec{v_2}) + a_3T(\vec{v_3}) = T(\vec{0})
+      \end{equation*}
+      Since $\Set{T(\vec{v_1}), T(\vec{v_2}), T(\vec{v_3})}$ are linearly independent we get that
+      \begin{equation*}
+        a_1T(\vec{v_1}) + a_2T(\vec{v_2}) + a_3T(\vec{v_3}) = \vec{0}
+      \end{equation*}
+      This also means the only solution is the trivial $\vec{a} = \vec{0}$. Notice the supposition made at the beginning also uses $\vec{a}$. Thus, that supposition also only has $\vec{a} = \vec{0}$ as a solution and $\vec{v_1}$, $\vec{v_2}$, and $\vec{v_3}$ are also linearly independent.
+    \end{proof}
+\end{enumerate}
+
+\end{document}

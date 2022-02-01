@@ -1,0 +1,46 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 7.2}
+\date{} % clear date
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[5.]
+    Let $A = \begin{bmatrix}a & b \\ b & c\end{bmatrix}$ and $a$, $b$, and $c$ are nonzero constants For which values of $a$, $b$, and $c$ does $A$ have two distinct eigenvalues? \\
+    \\
+    First, calculate the characteristic polynomial and set it equal to 0.
+    \begin{align*}
+      0 &= \text{det}(A - \lambda I_2) \\
+      &= \text{det}\left(
+        \begin{bmatrix}
+          a - \lambda & b \\
+          b & c - \lambda
+        \end{bmatrix}
+      \right) \\
+      &= (a - \lambda)(c - \lambda) - b^2 \\
+      &= \lambda^2 - (a + c)\lambda + ac - b^2
+    \end{align*}
+    Notice that the result is a quadratic equation. Thus, the quadratic formula can be used. For the quadratic formula to yield two real and distinct solutions (i.e. two distinct eigenvalues), the discriminant must be positive.
+    \begin{align*}
+      (a + c)^2 - 4(ac - b^2) &> 0 \\
+      a^2 + 2ac + c^2 - 4ac + 4b^2 &> 0 \\
+      a^2 - 2ac + c^2 + 4b^2 &> 0 \\
+      (c - a)^2 + 4b^2 &> 0
+    \end{align*}
+    Notice this inequality holds true for $b \ne 0$, $a,c \in \mathbb{R}$ and for $b = 0$, $c \ne a$. Since all constants are nonzero, the latter can be ignored. Thus, any real values for $a$, $b$, and $c$ will yield two distinct eigenvalues.
+\end{enumerate}
+
+\end{document}

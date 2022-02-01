@@ -1,0 +1,63 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+% CUSTOM STYLES %
+\thispagestyle{empty} % remove page number
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\begin{claim}
+If $A$ and $B$ are matrices of the same size, then the following formula must hold:
+\begin{align*}
+  rank(A + B) = rank(A) + rank(B)
+\end{align*}
+\end{claim}
+
+\begin{proof}
+Suppose the claim is true. Let
+\begin{align*}
+  A &= \begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+  \end{bmatrix} \\
+  B &= \begin{bmatrix}
+    -1 & -1 \\
+    -1 & -1 \\
+  \end{bmatrix}
+\end{align*}
+with $A + B$ resulting in the zero matrix. To find the ranks, put the matrices in reduced row-echelon form:
+\begin{align*}
+  rref(A) &= \begin{bmatrix}
+    1 & 1 \\
+    0 & 0 \\
+  \end{bmatrix} \\
+  rref(B) &= \begin{bmatrix}
+    1 & 1 \\
+    0 & 0 \\
+  \end{bmatrix} \\
+  rref(A + B) &= \begin{bmatrix}
+    0 & 0 \\
+    0 & 0 \\
+  \end{bmatrix}
+\end{align*}
+Notice that
+\begin{align*}
+  rank(A) = 1 \\
+  rank(B) = 1 \\
+  rank(A + B) = 0
+\end{align*}
+which means
+\begin{align*}
+  rank(A + B) &\ne rank(A) + rank(B) \\
+  0 &\ne 1 + 1 \\
+  0 &\ne 2
+\end{align*}
+Therefore, the claim is false.
+\end{proof}
+
+\end{document}

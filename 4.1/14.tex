@@ -1,0 +1,41 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{amsthm}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.1}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[14.]
+    True or False? Upload your reasoning. If the statement is true give a proof or detailed reason why it is true. If it is false give a counter example. \\
+    \\
+    \begin{claim}
+      If $W_1$ and $W_2$ are subspaces of a linear space $V$, then the intersection $W_1 \cap W_2$ must be a subspace of $V$ as well.
+    \end{claim}
+    \begin{proof}
+      Let $\vec{v}$ and $\vec{w}$ be vectors such that $\vec{v}, \vec{w} \in W_1 \cap W_2$. By the definition of a set intersection, $\vec{v}, \vec{w} \in W_1$ and $\vec{v}, \vec{w} \in W_2$. By the definition of a linear subspace, $\vec{v} + k\vec{w} \in W_1$ and $\vec{v} + k\vec{w} \in W_2$ for some $k \in \mathbb{R}$. Therefore, by the definition of a set intersection, $\vec{v} + k\vec{w} \in W_1 \cap W_2$. \\
+      \\
+      By the definition of a linear subspace, both $W_1$ and $W_2$ contain the neutral element 0 of $V$. Therefore, by the definition of a set intersection, $W_1 \cap W_2$ also contains the neutral element $0$ of $V$. \\
+      \\
+      It has been shown that $W_1 \cap W_2$ is closed under linear combinations and contains the neutral element 0 of $V$. Therefore, the definition of a linear subspace is satisified and the claim is true.
+    \end{proof}
+    \textit{Hint:} Start with $k \in \mathbb{R}$ and $\vec{v}, \vec{w} \in W_1 \cap W_2$. Then, are $\vec{v}$ and $\vec{w}$ both in $W_2$? If so, why is $\vec{v} + k\vec{w} \in W_2$? Can you conclude that $\vec{v} + k\vec{w} \in W_1 \cap W_2$?
+\end{enumerate}
+
+\end{document}

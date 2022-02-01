@@ -1,0 +1,77 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.2b}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\newcommand{\detthree}[9]{
+  #1\begin{vmatrix}
+    #5 & #6 \\
+    #8 & #9
+  \end{vmatrix}
+  - #2\begin{vmatrix}
+    #4 & #6 \\
+    #7 & #9
+  \end{vmatrix}
+  + #3\begin{vmatrix}
+    #4 & #5 \\
+    #7 & #8
+  \end{vmatrix} %\\
+  % &= #1[#5 \cdot #9 - #6 \cdot #8] \\
+  % &\qquad - #2[#4 \cdot #9 - #6 \cdot #7] \\
+  % &\qquad + #3[#4 \cdot #8 - #5 \cdot #7]
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[9.]
+    \begin{claim}
+      If $a$, $b$, and $c$ are distinct real numbers, then the polynomials $(x-b)(x-c)$, $(x-a)(x-c)$, and $(x-a)(x-b)$ must be linearly independent.
+    \end{claim}
+    \begin{proof}
+      First, expand the polynomials.
+      \begin{align*}
+        (x-b)(x-c) &= bc - (b+c)x + x^2 \\
+        (x-a)(x-c) &= ac - (a+c)x + x^2 \\
+        (x-a)(x-b) &= ab - (a+b)x + x^2
+      \end{align*}
+      These polynomials are in $\mathcal{P}_2$, whose standard basis is $\mathfrak{B} = \Set{1, x, x^2}$. Using $\mathfrak{B}$, represent the polynomials as a matrix $A$.
+      \begin{align*}
+        A &= \begin{bmatrix}
+          bc & -(b+c) & 1 \\
+          ac & -(a+c) & 1 \\
+          ab & -(a+b) & 1
+        \end{bmatrix}
+      \end{align*}
+      To show the polynomials are linearly independent, show det$(A) \ne 0$.
+      \begin{align*}
+        \text{det}(A) &= \detthree{bc}{-(b+c)}{1}{ac}{-(a+c)}{1}{ab}{-(a+b)}{1} \\
+        &= bc[(a + b) - (a + c)] + (b + c)(ac - ab) + ab(a + c) - ac(a + b) \\
+        % &= bc(b - c) + (b + c)(ac - ab) + ab(a + c) - ac(a + b) \\
+        % &= bc(b - c) + (b + c)(ac - ab) + ba^2 - ca^2 \\
+        &= cb^2 - bc^2 + ac^2 - ab^2 + ba^2 - ca^2 \\
+        &= (a^2 - ab - ac + bc)(b - c) \\
+        &= (a - b)(a - c)(b - c)
+      \end{align*}
+      Notice that for det$(A) = 0$, at least two values would have to equal 0. However, all three values are distinct, so this is impossible. Therefore, det$(A) \ne 0$ and the polynomials are linearly independent.
+    \end{proof}
+\end{enumerate}
+
+\end{document}

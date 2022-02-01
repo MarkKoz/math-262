@@ -1,0 +1,65 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{braket}
+\usepackage{amsthm}
+
+% remove spacing around date and author
+\usepackage{titling}
+\predate{}
+\postdate{}
+\preauthor{}
+\postauthor{}
+
+\author{}
+\title{MATH 262 - Homework 4.1}
+\date{} % clear date
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[5.]
+    Determine whether the following subset of $P_2$ is a subspace of $P_2$.
+    \begin{align*}
+      V = \Set{p(t): \int_0^1 p(t)dt = 0}
+    \end{align*}
+    \begin{claim}
+      $V$ is a linear subspace of $P_2$.
+    \end{claim}
+    \begin{proof}
+      Take any $f(t)$ and $g(t)$ such that $f(t),g(t) \in V$. Therefore, the following is true
+      \begin{equation*}
+        \begin{aligned}[c]
+          \int_0^1 f(t)dt = 0
+        \end{aligned}
+        \qquad
+        \begin{aligned}[c]
+          \int_0^1 g(t)dt = 0
+        \end{aligned}
+      \end{equation*}
+      For $V$ to be a linear subspace of $P_2$, it must be shown that $(f + kg)(t) \in V$. Let $k \in \mathbb{R}$ and consider $(f + kg)(t) = f(t) + kg(t)$, which is still a polynomial in $P_2$. Now consider
+      \begin{align*}
+        \int_0^1 (f + kg)(t)dt &= \int_0^1 f(t)dt + k\int_0^1 g(t)dt \\
+        &= 0 + 0 \\
+        &= 0
+      \end{align*}
+      Therefore, $(f + kg)(t) \in V$. \\
+      \\
+      It must also be shown that the neutral element is in $P_2$. This is trivially true, as the definite integral of 0 is always 0:
+      \begin{align*}
+        \int_0^1 0dt = 0
+      \end{align*}
+      It has been shown that $V$ is closed under linear combinations and contains the neutral element in $P_2$. Therefore, the definition of a linear subspace is satisfied and the claim is true.
+    \end{proof}
+    \textit{Note:} $P_n$ is the set consisting of the zero polynomial combined with the set of all polynomials of degree less than or equal to $n$. \\
+    \\
+    Remember, to show that a subset IS a subspace you must show that for every $f$,$g$ in the set and for every $k \in \mathbb{R}$ we have that $f + kg$ is also in the subset. To show that a subset is NOT a subspace you must either show that $\vec{0}$ is not in the subset or give specific $f$ and $g$ in the set and $k \in \mathbb{R}$ such that $f + kg$ is NOT in the subset. \\
+    \\
+\end{enumerate}
+
+\end{document}
